@@ -7,7 +7,7 @@ import (
 
 func main(){
 	server := http.Server{
-		Addr: ":8082",
+		Addr: ":8080",
 	}
 	http.Handle("/receipt", http.FileServer(http.Dir("./test")))
 	fmt.Println("server listening...")
