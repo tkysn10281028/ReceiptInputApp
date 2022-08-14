@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"time"
 )
 
 func main(){
@@ -11,6 +10,6 @@ func main(){
 		Addr: ":8082",
 	}
 	http.Handle("/", http.FileServer(http.Dir("./test")))
-	fmt.Println(time.Now().String() + "server listening...")
+	fmt.Println("server listening...")
 	server.ListenAndServe()
 }
