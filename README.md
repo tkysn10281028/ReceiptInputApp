@@ -76,3 +76,20 @@ https://qiita.com/hika7719/items/4cb50366a4d9fc8415f6
 https://stackoverflow.com/questions/15214977/cloning-git-repo-causes-error-host-key-verification-failed-fatal-the-remote/29380672#29380672
 https://qiita.com/tz2i5i_ebinuma/items/528ea5163bb2df379852
 
+### Jenkins側設定及びgithub web hooks
+https://developer.aiming-inc.com/infra/jenkins-github-webhook-collaboration/#outline__4_2
+の手順で大体OK
+ただ、GitHubとSSH接続する設定をしていないのでGithub側の送信は失敗しているはず。
+
+### jenkinsユーザーでgithubにsshできるようにする
+https://qiita.com/hika7719/items/4cb50366a4d9fc8415f6   
+を参考にやればできる。ただ記述や設定が足りない箇所があるので記載。
+1. jenkinsユーザーのbashが有効になっていないので別途設定する。   
+cat /etc/passwdでjenkinsの欄がbin/falseになっていたらbin/bashに書き換えする   
+2. 上記サイトでもちらっと書いているが、普通にやると最後のsudo -u jenkins ssh -T git@ssh.github.comのところでpermission deniedされる。以下ステップを試してみる
+3. 所有者をjenkinsユーザーにする
+```
+sudo chown jenkins id_rsa
+```
+4. known_hostsにGitHubを追加
+https://stackoverflow.com/questions/15214977/cloning-git-repo-causes-error-host-key-verification-failed-fatal-the-remote/29380672#29380672
