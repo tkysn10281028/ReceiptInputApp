@@ -93,3 +93,5 @@ sudo chown jenkins id_rsa
 ```
 4. known_hostsにGitHubを追加
 https://stackoverflow.com/questions/15214977/cloning-git-repo-causes-error-host-key-verification-failed-fatal-the-remote/29380672#29380672
+
+sakujo
