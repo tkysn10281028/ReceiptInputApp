@@ -102,3 +102,7 @@ chown jenkins ジョブのディレクトリ
 ```
 
 6. 
+rm README.md  
+rm go.mod  
+rm main.go  
+rm -r test
