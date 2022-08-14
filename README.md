@@ -93,3 +93,10 @@ sudo chown jenkins id_rsa
 ```
 4. known_hostsにGitHubを追加
 https://stackoverflow.com/questions/15214977/cloning-git-repo-causes-error-host-key-verification-failed-fatal-the-remote/29380672#29380672
+
+5. jenkinsの権限変更
+git cloneした場合にdefaultのjenkinsの権限はmkdirできる権限がないのでgit cloneしようとしても失敗してしまう。jenkinsの権限を変更する必要がある(というかmkdirしたいディレクトリの所有者を変える)
+```
+cd jenkinsのジョブのディレクトリ
+chown jenkins ジョブのディレクトリ
+```
