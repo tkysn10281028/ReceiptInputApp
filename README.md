@@ -106,3 +106,4 @@ rm README.md
 rm go.mod  
 rm main.go  
 rm -r test
+rm -r ReceiptInputApp
