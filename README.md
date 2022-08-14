@@ -78,7 +78,7 @@ https://qiita.com/tz2i5i_ebinuma/items/528ea5163bb2df379852
 
 ### Jenkins側設定及びgithub web hooks
 https://developer.aiming-inc.com/infra/jenkins-github-webhook-collaboration/#outline__4_2
-の手順で大体OK
+の手順で大体OK(jenkins標準WebHookのやつ)
 ただ、GitHubとSSH接続する設定をしていないのでGithub側の送信は失敗しているはず。
 
 ### jenkinsユーザーでgithubにsshできるようにする
