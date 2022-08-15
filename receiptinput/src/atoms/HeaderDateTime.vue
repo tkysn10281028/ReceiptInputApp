@@ -1,6 +1,8 @@
 <template>
   <div id="header-date-time">
-    <h2>{{ clock }}</h2>
+    <div class="clock">
+      <h2>{{ clock }}</h2>
+    </div>
   </div>
 </template>
 <script>
@@ -18,3 +20,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.clock {
+  text-align: center;
+}
+</style>
