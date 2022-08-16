@@ -1,8 +1,5 @@
 <template>
   <div id="number-buttons">
-    <div>
-      <h2></h2>
-    </div>
     <div class="group-number-buttons">
       <div class="group-row">
         <div class="group-column">
@@ -56,8 +53,29 @@
             :buttonValue="valueAC"
             @clickButton="inputNumber"
           ></MyInputButton>
+          <MyInputButton
+            :buttonValue="valueSubmit"
+            @clickButton="inputNumber"
+          ></MyInputButton>
+          <MyInputButton
+            :buttonValue="valueDetails"
+            @clickButton="isOpen = !isOpen"
+          ></MyInputButton>
         </div>
       </div>
+    </div>
+    <h2>{{ inputValue.join("") }}</h2>
+    <div class="table-content" v-if="isOpen">
+      <table>
+        <tr>
+          <th>大項目名</th>
+          <th>金額</th>
+        </tr>
+        <tr v-for="item in testDetailsArray" :key="item.id">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}円</td>
+        </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -68,6 +86,17 @@ export default {
     return {
       inputValue: [],
       valueAC: "AC",
+      valueSubmit: "投稿",
+      valueDetails: "明細",
+      testDetailsArray: [
+        { id: 1, name: "item1", price: 100 },
+        { id: 2, name: "item1", price: 540 },
+        { id: 3, name: "item1", price: 320 },
+        { id: 4, name: "item1", price: 1300 },
+        { id: 5, name: "item1", price: 1500 },
+        { id: 6, name: "item1", price: 150 },
+      ],
+      isOpen: false,
     };
   },
   components: {
@@ -75,7 +104,21 @@ export default {
   },
   methods: {
     inputNumber: function (event) {
-      console.log(event);
+      if (event == "AC") {
+        this.inputValue = [];
+        return;
+      }
+      if (this.inputValue.length == 20) {
+        return;
+      }
+      if (this.inputValue[0] == "0") {
+        this.inputValue.splice(0);
+      }
+      if (event == "投稿") {
+        this.inputValue = [];
+        return;
+      }
+      this.inputValue.push(event);
     },
   },
 };
@@ -84,5 +127,32 @@ export default {
 .group-column {
   display: flex;
   justify-content: center;
+}
+li {
+  list-style: none;
+}
+.table-content {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th,
+table td {
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tr:nth-child(odd) {
+  background-color: #eee;
 }
 </style>

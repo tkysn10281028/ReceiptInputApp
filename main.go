@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"out/utils"
 )
 
 func main(){
@@ -10,6 +10,7 @@ func main(){
 		Addr: ":8082",
 	}
 	http.Handle("/", http.FileServer(http.Dir("./receiptinput/dist")))
-	fmt.Println("server listening...")
+	http.HandleFunc("/api/v1/getUserInfoByUserId",getUserInfoByUserId)
+	utils.LogFirstAccess()
 	server.ListenAndServe()
 }
