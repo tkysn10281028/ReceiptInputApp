@@ -1,0 +1,126 @@
+[
+	{
+		"UserId": {
+			"String": "002",
+			"Valid": true
+		},
+		"UserName": {
+			"String": "TESTtest",
+			"Valid": true
+		},
+		"PostedDate": {
+			"String": "2022/8/13",
+			"Valid": true
+		},
+		"PostedTime": {
+			"String": "13:00",
+			"Valid": true
+		},
+		"MajorItemName": {
+			"String": "item4",
+			"Valid": true
+		},
+		"MajorItemPrice": {
+			"Int64": 400,
+			"Valid": true
+		},
+		"MajorItemId": {
+			"Int64": 4,
+			"Valid": true
+		},
+		"MiddleItemName": {
+			"String": "",
+			"Valid": false
+		},
+		"MiddleItemPrice": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MiddleItemId": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MajorItemIdInMiddle": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MinorItemName": {
+			"String": "",
+			"Valid": false
+		},
+		"MinorItemPrice": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MinorItemId": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MiddleItemIdInMinor": {
+			"Int64": 0,
+			"Valid": false
+		}
+	},
+	{
+		"UserId": {
+			"String": "002",
+			"Valid": true
+		},
+		"UserName": {
+			"String": "TESTtest",
+			"Valid": true
+		},
+		"PostedDate": {
+			"String": "2022/8/13",
+			"Valid": true
+		},
+		"PostedTime": {
+			"String": "12:00",
+			"Valid": true
+		},
+		"MajorItemName": {
+			"String": "item3",
+			"Valid": true
+		},
+		"MajorItemPrice": {
+			"Int64": 300,
+			"Valid": true
+		},
+		"MajorItemId": {
+			"Int64": 3,
+			"Valid": true
+		},
+		"MiddleItemName": {
+			"String": "",
+			"Valid": false
+		},
+		"MiddleItemPrice": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MiddleItemId": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MajorItemIdInMiddle": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MinorItemName": {
+			"String": "",
+			"Valid": false
+		},
+		"MinorItemPrice": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MinorItemId": {
+			"Int64": 0,
+			"Valid": false
+		},
+		"MiddleItemIdInMinor": {
+			"Int64": 0,
+			"Valid": false
+		}
+	}
+]

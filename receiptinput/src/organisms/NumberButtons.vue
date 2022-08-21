@@ -71,7 +71,7 @@
           <th>大項目名</th>
           <th>金額</th>
         </tr>
-        <tr v-for="item in testDetailsArray" :key="item.id">
+        <tr v-for="item in computedDetailList" :key="item.id">
           <td>{{ item.name }}</td>
           <td>{{ item.price }}円</td>
         </tr>
@@ -88,16 +88,22 @@ export default {
       valueAC: "AC",
       valueSubmit: "投稿",
       valueDetails: "明細",
-      testDetailsArray: [
-        { id: 1, name: "item1", price: 100 },
-        { id: 2, name: "item1", price: 540 },
-        { id: 3, name: "item1", price: 320 },
-        { id: 4, name: "item1", price: 1300 },
-        { id: 5, name: "item1", price: 1500 },
-        { id: 6, name: "item1", price: 150 },
-      ],
       isOpen: false,
     };
+  },
+  props: {
+    detailList: Array,
+  },
+  computed: {
+    computedDetailList: function () {
+      return this.detailList.map((detail) => {
+        return {
+          id: detail.MajorItemId,
+          name: detail.MajorItemName,
+          price: detail.MajorItemPrice,
+        };
+      });
+    },
   },
   components: {
     MyInputButton,
@@ -115,6 +121,7 @@ export default {
         this.inputValue.splice(0);
       }
       if (event == "投稿") {
+        this.$emit("inputValue", this.inputValue.join(""));
         this.inputValue = [];
         return;
       }

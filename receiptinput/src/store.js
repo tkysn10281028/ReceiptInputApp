@@ -29,10 +29,10 @@ const store = new Vuex.Store({
   },
   mutations: {
     setUserInfo(state, val) {
-      state.attendanceInfo = val;
+      state.userInfo = val;
     },
     setUserList(state, val) {
-        state.attendanceInfoList = val;
+        state.userList = val;
     },
     clearState(state){
       Object.assign(state,getDefaultState())
