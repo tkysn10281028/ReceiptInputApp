@@ -110,3 +110,4 @@ rm -r ReceiptInputApp
 
 7. 
 gccコンパイラもダウンロードしておくこと
+git commit 
