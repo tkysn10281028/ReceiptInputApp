@@ -22,7 +22,7 @@ https://qiita.com/LowSE01/items/3e39bf6f86e6884d69b1
 ```
 sudo yum install jenkins
 ```
-これでインストールはOK   
+これでインストールはOK   ccca
 
 ### Apacheインストール
 
@@ -107,3 +107,6 @@ rm go.mod
 rm main.go  
 rm -r test
 rm -r ReceiptInputApp
+
+7. 
+gccコンパイラもダウンロードしておくこと
