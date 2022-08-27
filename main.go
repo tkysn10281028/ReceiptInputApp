@@ -28,7 +28,3 @@ func openAndUnmarshalJsonFile(path string)([]byte){
 	}
 	return jsonData
 }
-
-func test(){
-	
-}
