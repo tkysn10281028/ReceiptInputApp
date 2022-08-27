@@ -18,7 +18,6 @@ func TestGetUserInfoByUserId1(t *testing.T) {
 	&userInfoModelsExpected)
 	assert.Equal(t, userInfoModelsExpected, userInfoModels)
 }
-
 func TestGetUserInfoByUserId2(t *testing.T) {
 	var userInfoModels []data.UserInfoModel
 	var userInfoModelsExpected []data.UserInfoModel

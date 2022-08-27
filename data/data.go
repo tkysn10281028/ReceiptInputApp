@@ -28,7 +28,7 @@ var Db *sql.DB
 func init() {
 	usr ,_ := user.Current()
 	var dbConf string
-	if(usr.HomeDir =="/home/ec2-user"){
+	if(usr.HomeDir =="/home/ec2-user" || usr.HomeDir == "/home/jenkins"){
 		dbConf = "myapp:@Pleasure1@tcp(10.0.2.10:3306)/myapp?charset=utf8mb4"
 	}else{
 		dbConf =  "myapp:@Pleasure1@/myapp"
