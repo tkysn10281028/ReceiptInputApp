@@ -27,7 +27,7 @@ func TestGetUserInfoByUserId1(t *testing.T) {
 	json.Unmarshal(openAndUnmarshalJsonFile("./jsonFileForTest/TestGetUserInfoByUserId1.json"),
 	&userInfoModelsExpected)
 	assert.Equal(t, http.StatusOK, res.Code)
-	assert.Equal(t, userInfoModels, userInfoModelsExpected)
+	assert.Equal(t, userInfoModelsExpected, userInfoModels)
 }
 
 func TestGetUserInfoByUserId2(t *testing.T) {
@@ -45,5 +45,6 @@ func TestGetUserInfoByUserId2(t *testing.T) {
 	json.Unmarshal(openAndUnmarshalJsonFile("./jsonFileForTest/TestGetUserInfoByUserId2.json"),
 	&userInfoModelsExpected)
 	assert.Equal(t, http.StatusOK, res.Code)
-	assert.Equal(t, userInfoModels, userInfoModelsExpected)
+	assert.Equal(t, userInfoModelsExpected, userInfoModels)
 }
+
