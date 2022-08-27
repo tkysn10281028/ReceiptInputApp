@@ -111,3 +111,8 @@ rm -r ReceiptInputApp
 7. 
 gccコンパイラもダウンロードしておくこと
 git commit 
+
+8. jenkins内のシステムプロパティのいじり方
+/etc/sysconfig/jenkins内のプロパティをいじればいいと書いているものがあるがこれは間違い。編集しても設定が反映されない。
+ sudo systemctl edit jenkins
+https://www.jenkins.io/doc/book/system-administration/systemd-services/#managing-systemd-services
