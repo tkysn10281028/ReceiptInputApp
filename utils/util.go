@@ -1,9 +1,11 @@
 package utils
 
 import (
+	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 )
 
@@ -15,4 +17,16 @@ func LogPostForm(r *http.Request) {
 	strReplaced := strings.Replace(str, "&","  ||  ",-1)
 	log.Print(r.URL.String() + " is called.")
 	log.Print("Posted Form:" + "\n"+ strReplaced)
+}
+
+func OpenAndUnmarshalJsonFile(path string)([]byte){
+	jsonFile,err := os.Open(path)
+    if err != nil{
+		panic(err)
+	}
+	jsonData ,err := ioutil.ReadAll(jsonFile)
+	if err != nil{
+		panic(err)
+	}
+	return jsonData
 }
