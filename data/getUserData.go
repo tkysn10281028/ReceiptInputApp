@@ -7,7 +7,7 @@ func GetUserInfoByUserId(userId string) (bool,[]byte) {
 	userInfoModels := []UserInfoModel{}
 	rows, err := Db.Query(statement,userId)
 	if err != nil {
-		return false,nil
+		panic(err)
 	}
 	defer rows.Close()
 	for rows.Next(){
@@ -30,7 +30,7 @@ func GetUserInfoByUserId(userId string) (bool,[]byte) {
 			&infoModel.MiddleItemIdInMinor,
 		)
 		if err !=nil{
-			return false,nil
+			panic(err)
 		}
 		userInfoModels = append(userInfoModels, infoModel)
 	}
