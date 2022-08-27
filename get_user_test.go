@@ -13,7 +13,7 @@ import (
 
 func TestGetUserInfoByUserId1(t *testing.T) {
 	usr,_ := user.Current()
-	fmt.Println(usr.HomeDir)
+	fmt.Println(usr.HomeDir =="/home/ec2-user" || usr.HomeDir == "/home/jenkins")
 	var userInfoModels []data.UserInfoModel
 	var userInfoModelsExpected []data.UserInfoModel
 	_,output := data.GetUserInfoByUserId("001")
