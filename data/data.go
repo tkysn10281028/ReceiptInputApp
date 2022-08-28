@@ -2,6 +2,7 @@ package data
 
 import (
 	"database/sql"
+	"log"
 	"os/user"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -28,6 +29,7 @@ var Db *sql.DB
 func init() {
 	usr ,_ := user.Current()
 	var dbConf string
+	log.Print(usr.HomeDir =="/home/ec2-user" || usr.HomeDir == "/home/jenkins")
 	if(usr.HomeDir =="/home/ec2-user" || usr.HomeDir == "/home/jenkins"){
 		dbConf = "myapp:@Pleasure1@tcp(10.0.2.10:3306)/myapp?charset=utf8mb4"
 	}else{
