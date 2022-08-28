@@ -7,7 +7,7 @@ import (
 
 func main(){
 	server := http.Server{
-		Addr: ":8082",
+		Addr: ":8080",
 	}
 	http.Handle("/", http.FileServer(http.Dir("./receiptinput/dist")))
 	http.HandleFunc("/api/v1/getUserInfoByUserId",getUserInfoByUserId)
