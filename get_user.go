@@ -10,7 +10,8 @@ func getUserInfoByUserId(w http.ResponseWriter, r *http.Request){
 	r.ParseForm()
 	utils.LogPostForm(r)
 	userId := r.PostFormValue("userId")
-	isOK,output := data.GetUserInfoByUserId(userId)
+	date := r.PostFormValue("date")
+	isOK,output := data.GetUserInfoByUserId(userId,date)
 	if isOK{
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(output)

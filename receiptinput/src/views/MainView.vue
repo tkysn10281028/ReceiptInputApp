@@ -35,7 +35,7 @@ export default {
     };
   },
   created: function () {
-    let userId = "002";
+    let userId = "001";
     const url = location.origin + "/api/v1/getUserInfoByUserId";
     const params = new URLSearchParams();
     params.append("userId", userId);
@@ -68,7 +68,8 @@ export default {
           .post(url, params, this.serverPass + "login")
           .then((response) => {
             console.log(response);
-          });
+          })
+          .catch((error) => console.log(error));
       }
     },
     makeItemTree: function (data) {

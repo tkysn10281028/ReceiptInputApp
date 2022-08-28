@@ -2,10 +2,10 @@ package data
 
 import "encoding/json"
 
-func GetUserInfoByUserId(userId string) (bool,[]byte) {
+func GetUserInfoByUserId(userId string,date string) (bool,[]byte) {
 	statement := getUserInfoByUserIdSQL()
 	userInfoModels := []UserInfoModel{}
-	rows, err := Db.Query(statement,userId)
+	rows, err := Db.Query(statement,userId,date)
 	if err != nil {
 		panic(err)
 	}

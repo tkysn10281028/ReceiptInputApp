@@ -27,7 +27,10 @@ func getUserInfoByUserIdSQL() (string) {
 	LEFT JOIN MINOR_ITEM D ON
     	C.MIDDLE_ITEM_INCREMENT_ID = D.MIDDLE_ITEM_INCREMENT_ID
 	WHERE
-		A.USER_ID = ? AND(
+		A.USER_ID = ? 
+		AND
+		B.POSTED_DATE = ?
+		AND(
         (
             C.DELETE_FLG = 0 OR D.DELETE_FLG = 0
         ) OR(
