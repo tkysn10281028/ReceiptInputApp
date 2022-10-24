@@ -100,6 +100,9 @@ git cloneした場合にdefaultのjenkinsの権限はmkdirできる権限がな�
 cd jenkinsのジョブのディレクトリ
 chown jenkins ジョブのディレクトリ
 ```
+5.追記
+chownしてもいいが、それよりはjenkinsユーザーをsudo権限付与してしまう
+https://qiita.com/TomohiroSaito/items/fe8839b47b42d6c3fbee
 
 6. 
 rm README.md  
